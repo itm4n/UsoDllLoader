@@ -4,7 +4,9 @@
 
 This PoC shows __a technique__ that can be used to __weaponise privileged file write vulnerabilities__ on Windows. It provides an alternative to the DiagHub DLL loading "exploit" found by James Forshaw (a.k.a. [@tiraniddo](https://twitter.com/tiraniddo)), which was fixed by Microsoft starting from build version 1903.
 
-TODO: video
+<p align="center">
+  <img src="/screenshots/UsoDllLoader.gif">
+</p>
 
 ## TL;DR
 
