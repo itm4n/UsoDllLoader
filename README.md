@@ -48,3 +48,11 @@ For testing purposes, you can:
 2. Use the loader as a regular user.
 3. Hopefully enjoy a shell as `NT AUTHORITY\System`.
 
+## Caveats
+
+This method might not work in the following situations:
+
+- One or several updates are waiting to being installed.
+- Updates are being installed.
+
+However, the Windows Update GUI ("Settings > Update & Security > Windows Update") seems to behave differently. Indeed, in this case, the DLL loading succeeds every time so, with some more work, I'm sure this technique can be improved. 
