@@ -98,6 +98,8 @@ int TcpClient::connectTCP(const char* hostname, const char* port)
 		return -1;
 	}
 
+	wprintf_s(L"[+] Spawning shell...\n");
+
 	// Wait for the socket to be closed 
 	WaitForSingleObject(hThreadOut, INFINITE);
 

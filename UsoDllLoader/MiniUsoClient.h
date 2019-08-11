@@ -3,9 +3,21 @@
 #include <comdef.h>
 #pragma comment(lib, "rpcrt4.lib")
 
+typedef enum UsoAction {
+	USO_STARTSCAN,
+	USO_STARTDOWNLOAD,
+	USO_STARTINSTALL,
+	USO_REFRESHSETTINGS,
+	USO_STARTINTERACTIVESCAN,
+	USO_RESTARTDEVICE,
+	USO_SCANINSTALLWAIT,
+	USO_RESUMEUPDATE
+} UsoAction;
+
 class MiniUsoClient
 {
 private:
+	bool _ready = false;
 	void ThrowOnError(HRESULT hResult);
 
 public:
@@ -13,7 +25,7 @@ public:
 	~MiniUsoClient();
 
 public:
-	bool StartScan();
+	bool Run(UsoAction action);
 };
 
 struct Struct_5 {
