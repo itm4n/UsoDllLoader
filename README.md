@@ -14,10 +14,11 @@ Starting from Windows 10, Microsoft introduced the `Update Session Orchestrator`
 
 From an attacker's standpoint, this service is interesting because it runs as `NT AUTHORITY\System` and it tries to load a __non-existent DLL__ (`windowscoredeviceinfo.dll`) __whenever an Update Session is created__.
 
-This means that, if we find a privileged file write vulnerability in Windows or in some third-party software, we could copy a specifically crafted DLL into `C:\Windows\Sytem32\` and then have it loaded by the USO service to get arbitrary code execution as `NT AUTHORITY\System`. 
+This means that, if we found a privileged file write vulnerability in Windows or in some third-party software, we could copy our own version of `windowscoredeviceinfo.dll` into `C:\Windows\Sytem32\` and then have it loaded by the USO service to get arbitrary code execution as `NT AUTHORITY\System`. 
 
-For more information --> https://itm4n.github.io/
-
+For more information:  
+Part 1 - https://itm4n.github.io/  
+Part 2 - Upcoming...  
 
 ## Testing the PoC
 
@@ -25,9 +26,9 @@ For more information --> https://itm4n.github.io/
 
 This solution is composed of two projects: __WindowsCoreDeviceInfo__ and __UsoDllLoader__. 
 
-- __WindowsCoreDeviceInfo__ provides a PoC DLL that will start a bind shell on port 1337 (localhost only), whenever the `QueryDeviceInformation()` function is called. 
+- __WindowsCoreDeviceInfo__ provides a PoC DLL that will start a bind shell on port 1337 (localhost only), whenever the `QueryDeviceInformation()` function is called. That's the name of the function used by the USO workers.
 
-- __UsoDllLoader__, as its name suggests, is the loader. It can be run as a regular user to interact with the USO service and have it load `windowscoredeviceinfo.dll`. That's the name of the function used by the USO workers. Then, it will try to connect to the bind shell. 
+- __UsoDllLoader__, is a stripped-down version of `usoclient.exe`. It can be run as a regular user to interact with the USO service and have it load `windowscoredeviceinfo.dll`. Then, it will try to connect to the bind shell. 
 
 ### Build the solution 
 
