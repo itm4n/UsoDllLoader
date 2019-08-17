@@ -17,8 +17,8 @@ From an attacker's standpoint, this service is interesting because it runs as `N
 This means that, if we found a privileged file write vulnerability in Windows or in some third-party software, we could copy our own version of `windowscoredeviceinfo.dll` into `C:\Windows\Sytem32\` and then have it loaded by the USO service to get arbitrary code execution as `NT AUTHORITY\System`. 
 
 For more information:  
-Part 1 - https://itm4n.github.io/  
-Part 2 - Upcoming...  
+Part 1 - https://itm4n.github.io/usodllloader-part1/  
+Part 2 - https://itm4n.github.io/usodllloader-part2/  
 
 ## Testing the PoC
 
