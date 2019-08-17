@@ -12,7 +12,7 @@ This PoC shows __a technique__ that can be used to __weaponize privileged file w
 
 Starting from Windows 10, Microsoft introduced the `Update Session Orchestrator` service. __As a regular user__, you can interact with this service using COM, and start an "update scan" (i.e. check whether updates are available) or start the download of pending updates for example. There is even an undocumented built-in tool called `usoclient.exe`, which serves that purpose. 
 
-From an attacker's standpoint, this service is interesting because it naturally runs as `NT AUTHORITY\System` and it tries to load a __non-existent DLL__ (`windowscoredeviceinfo.dll`) __whenever an Update Session is created__.
+From an attacker's standpoint, this service is interesting because it runs as `NT AUTHORITY\System` and it tries to load a __non-existent DLL__ (`windowscoredeviceinfo.dll`) __whenever an Update Session is created__.
 
 This means that, if we find a privileged file write vulnerability in Windows or in some third-party software, we could copy a specifically crafted DLL into `C:\Windows\Sytem32\` and then have it loaded by the USO service to get arbitrary code execution as `NT AUTHORITY\System`. 
 
