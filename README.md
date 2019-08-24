@@ -32,7 +32,7 @@ This solution is composed of two projects: __WindowsCoreDeviceInfo__ and __UsoDl
 
 ### Build the solution 
 
-The solution is already preconfigured so compiling should be easy.
+The solution is already preconfigured so compiling should be easy. I'm using __Visual Studio 2019__. It might not work with older versions. 
 
 1. Select `Release` config and `x64` architecure.
 2. Build solution.
