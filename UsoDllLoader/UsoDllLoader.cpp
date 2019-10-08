@@ -38,7 +38,7 @@ int wmain(int argc, wchar_t** argv)
 	if (iRes != 0)
 	{
 		wprintf_s(L"[*] Retrying with UpdateOrchestrator->StartDownload()\n");
-		if (!miniUsoClient.Run(USO_STARTINTERACTIVESCAN))
+		if (!miniUsoClient.Run(USO_STARTDOWNLOAD))
 			return 3;
 
 		Sleep(TEMPO);
