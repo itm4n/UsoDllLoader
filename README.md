@@ -42,10 +42,7 @@ The solution is already preconfigured so compiling should be easy. I'm using __V
 
 1. Select `Release` config and `x64` architecure.
 2. Build solution.
-3. Output files:
-
-    - The DLL: `.\x64\Release\WindowsCoreDeviceInfo.dll`
-    - The loader: `.\x64\Release\UsoDllLoader.exe`
+3. Output: the DLL `.\x64\Release\WindowsCoreDeviceInfo.dll` and the loader `.\x64\Release\UsoDllLoader.exe`.
 
 
 ## Test
@@ -56,7 +53,7 @@ For testing purposes, you can:
 
 1. __As an administrator__, copy `WindowsCoreDeviceInfo.dll` to `C:\Windows\System32\`. 
 2. Use the loader as a regular user.
-3. Hopefully enjoy a shell as `NT AUTHORITY\System`.
+3. Hopefully enjoy a shell as `NT AUTHORITY\SYSTEM`.
 
 ### Usage 2 - UsoClient
 
