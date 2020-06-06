@@ -1,5 +1,7 @@
 # UsoDllLoader 
 
+:warning: __2020-06-06 Update:__ this trick no longer works on the latest builds of __Windows 10 Insider Preview__. This means that, although __it still works on the mainstream version of Windows 10__, you should expect it to be _patched_ in the coming months.
+
 ## Description 
 
 This PoC shows __a technique__ that can be used to __weaponize privileged file write vulnerabilities__ on Windows. It provides an alternative to the DiagHub DLL loading "exploit" found by James Forshaw (a.k.a. [@tiraniddo](https://twitter.com/tiraniddo)), which was fixed by Microsoft starting from build version 1903.
